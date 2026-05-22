@@ -1,0 +1,54 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5ff">
+        <animate attributeName="stop-color" values="#00f5ff;#7b00ff;#ff00c3;#00f5ff" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#7b00ff">
+        <animate attributeName="stop-color" values="#7b00ff;#ff00c3;#00f5ff;#7b00ff" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff00c3">
+        <animate attributeName="stop-color" values="#ff00c3;#00f5ff;#7b00ff;#ff00c3" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="#0a0a0f"/>
+
+  <!-- Icon Container -->
+  <g transform="translate(85, 95)">
+    <!-- Code Brackets -->
+    <path d="M35 25 L15 70 L35 115" stroke="#00f5ff" stroke-width="22" stroke-linecap="round" fill="none" filter="url(#glow)">
+      <animate attributeName="stroke-dasharray" values="0,120;120,0;0,120" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M105 25 L125 70 L105 115" stroke="#00f5ff" stroke-width="22" stroke-linecap="round" fill="none" filter="url(#glow)">
+      <animate attributeName="stroke-dasharray" values="0,120;120,0;0,120" dur="4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Eye -->
+    <ellipse cx="170" cy="70" rx="38" ry="28" fill="#1a1a2e" stroke="#7b00ff" stroke-width="10" filter="url(#glow)"/>
+    <circle cx="170" cy="70" r="13" fill="#00f5ff" filter="url(#glow)">
+      <animate attributeName="r" values="13;11;13" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="162" cy="62" r="5" fill="#ffffff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.5;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Text: Codexvisual -->
+  <text x="52" y="255" font-family="Arial Black, sans-serif" font-size="52" font-weight="900" letter-spacing="-2px" fill="url(#grad)" filter="url(#glow)" textLength="300" lengthAdjust="spacing">
+    Codexvisual
+  </text>
+
+  <!-- Bottom Glow Line -->
+  <rect x="55" y="275" width="290" height="6" rx="3" fill="url(#grad)" opacity="0.7"/>
+</svg>
